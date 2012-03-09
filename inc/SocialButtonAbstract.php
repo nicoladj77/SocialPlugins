@@ -1,7 +1,6 @@
 <?php
 abstract class SocialButtonAbstract {
-	private $settings = array();
-	
+	protected $settings;
 	function __construct(array $settings) {
 		if ($settings !== null){
 			$this->settings = array_merge($this->settings, $settings);

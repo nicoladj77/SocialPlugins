@@ -1,5 +1,5 @@
 <?php
-require_once 'inc/SocialButtonAbstract.php';
+require_once 'SocialButtonAbstract.php';
 class TwitterButton extends SocialButtonAbstract{
 	const TWEETER_URL = 'tweeter:url';
 	const TWEETER_VIA = 'tweeter:via';
@@ -11,7 +11,7 @@ class TwitterButton extends SocialButtonAbstract{
 	const TWEETER_SIZE = 'tweeter:size';
 	const TWEETER_COUNTURL = 'tweeter:counturl';
 	
-	private $settings = array(
+	protected $settings = array(
 			self::TWEETER_URL => FALSE,//URL to Tweet (Defaults to HTTP Referrer)
 			self::TWEETER_VIA => 'BiagettiStudio',//via user (no default)
 			self::TWEETER_TEXT => FALSE,//Tweet text (Defaults to the content of the <title> tag)

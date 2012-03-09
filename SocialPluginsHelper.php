@@ -1,7 +1,9 @@
 <?php
+foreach (glob(dirname(__FILE__) . DIRECTORY_SEPARATOR . "inc".DIRECTORY_SEPARATOR."*.php") as $filename)
+{
+	require_once $filename;
+}
 
-require_once "inc/SocialButtonAbstract.php";
-require_once "inc/PluginFactory.php";
 
 class SocialPluginsHelper {
 	

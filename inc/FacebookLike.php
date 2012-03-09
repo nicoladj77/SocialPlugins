@@ -1,6 +1,6 @@
 <?php
 
-require_once 'inc/SocialButtonAbstract.php';
+require_once 'SocialButtonAbstract.php';
 Class FacebookLike extends SocialButtonAbstract{
 	const FB_SEND = 'fb:send';
 	const FB_HREF = 'fb:href';
@@ -15,7 +15,7 @@ Class FacebookLike extends SocialButtonAbstract{
 	private $_apyKey = null;
 
 	
-	private $settings = array(
+	protected $settings = array(
 			self::FB_SEND => 'true',//Display button SEND
 			self::FB_HREF => FALSE,//the URL to like. If FALSE defaults to the current page.
 			self::FB_WIDTH => '88',// the width of the Like button.

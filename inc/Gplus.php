@@ -1,5 +1,5 @@
 <?php
-require_once 'inc/SocialButtonAbstract.php';
+require_once 'SocialButtonAbstract.php';
 class Gplus extends SocialButtonAbstract {
 	const GPLUS_HREF = 'gplus:href';
 	const GPLUS_SIZE = 'gplus:size';
@@ -8,7 +8,7 @@ class Gplus extends SocialButtonAbstract {
 
 	
 	
-	private $settings = array(
+	protected $settings = array(
 			self::GPLUS_HREF => FALSE,//The href to +1, defaults to the current URL
 			self::GPLUS_SIZE => 'medium',//The size of the button 'small' (15px) 'standard' (24px)  'medium' (20px) 'tall' (60px)
 			self::GPLUS_ANNOTATION => 'bubble',// The annotation to display next to the button. can be 'none', 'bubble' or 'inline'
