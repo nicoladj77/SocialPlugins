@@ -28,7 +28,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
 HTML;
 		return $markup;
 	}
-	public function renderButton(){
+	public function renderButton(array $settings = NULL){
+		$this->_mergeSettings($settings);
 		$dataAttributes = array();
 		foreach ($this->settings as $attr => $value){
 			//Skip the values thatare FALSE, no need to render anything for them
