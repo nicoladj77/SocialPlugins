@@ -15,6 +15,18 @@ class SocialPluginsHelper {
 	const TAG_OF_WRAPPER = 'tag_of_wrapper';
 	const STYLE_OF_WRAPPER = 'style_of_wrapper';
 	
+	private $plugins = array();
+	private $settings = array(
+			self::ID_OF_WRAPPER => "socialButtons",//id of the wrapper element
+			self::TAG_OF_WRAPPER => "div",//what HTML element to use as a wrapper, either DIV or UL (if you choose DIV, alle the children will be DIV too otherwise the will be LI)
+			self::CLASS_OF_WRAPPERS => "social",//Class of the children element
+			self::HTML_BEFORE_BUTTONS => '',//custom HTML before the plugins
+			self::HTML_AFTER_BUTTONS => '',//custom HTML after the plugins
+			self::STYLE_OF_WRAPPER => '',//custom style of the main wrapping element
+			self::CUSTOM_PLUGIN_STYLE => array()//this is some custom style thatwill be added to the elements that surround the plugins, useful to add extra width or inline options. It's										  //an associative array  with the keys that equals the name of the classes (for example to add style to the Facebook plugin, use the key FacebookLike
+	);
+	
+	
 	function __construct(array $settings = null) {
 		if ($settings !== null){
 			$this->settings = array_merge($this->settings, $settings);
@@ -29,16 +41,7 @@ class SocialPluginsHelper {
 		return $customStyle;
 	}
 	
-	private $plugins = array();
-	private $settings = array(
-			self::ID_OF_WRAPPER => "socialButtons",//id of the wrapper element
-			self::TAG_OF_WRAPPER => "div",//what HTML element to use as a wrapper, either DIV or UL (if you choose DIV, alle the children will be DIV too otherwise the will be LI)
-			self::CLASS_OF_WRAPPERS => "social",//Class of the children element
-			self::HTML_BEFORE_BUTTONS => '',//custom HTML before the plugins
-			self::HTML_AFTER_BUTTONS => '',//custom HTML after the plugins
-			self::STYLE_OF_WRAPPER => '',//custom style of the main wrapping element
-			self::CUSTOM_PLUGIN_STYLE => array()//this is some custom style thatwill be added to the elements that surround the plugins, useful to add extra width or inline options. It's										  //an associative array  with the keys that equals the name of the classes (for example to add style to the Facebook plugin, use the key FacebookLike			
-			);
+
 	
 	public function add(SocialButtonAbstract $plugin){
 		$this->plugins [] = $plugin;
