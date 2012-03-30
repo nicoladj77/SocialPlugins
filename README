@@ -30,3 +30,4 @@ $socialPlugins->renderAllScripts();
 $socialPlugins->renderAllButtons(array("FacebookLike" => array(FacebookLike::FB_HREF => $url)));
 
 Of course you can also use the single classes withouth the helper class
+
